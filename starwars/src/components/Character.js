@@ -27,7 +27,6 @@ const CharBox = styled.div`
     margin-top: 40px;
     margin-left: 50px;
     margin-right: 50px;
-
 `;
 
 
@@ -46,6 +45,7 @@ const Character = props => {
        
        //<FancyP onClick={props.setOpen}>{props.charData.name}</FancyP>
         //<FancyP onClick={(event) => console.log("click")}>{props.charData.name}</FancyP>
+        
        <CharBox>
             <FancyP>{props.charData.name}</FancyP>
             <InfoP>Height: {props.charData.height} </InfoP>
