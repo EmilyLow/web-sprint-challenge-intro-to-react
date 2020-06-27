@@ -1,4 +1,15 @@
 import React from "react";
+import styled from "styled-components";
+
+//Green = #33FF33 
+
+const FancyP = styled.p`
+    color: #33FF33;
+    font-size: 32px;
+    margin: 15px;
+
+
+`;
 
 
 
@@ -11,7 +22,7 @@ const Character = props => {
 
     return (
 
-        <div>Test</div>
+        <FancyP>{props.charData.name}</FancyP>
 
     );
 };
