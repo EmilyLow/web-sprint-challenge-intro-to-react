@@ -9,11 +9,12 @@ const FancyP = styled.p`
     font-size: 32px;
     margin: 15px;
     color: #33FF33;
-  
+    
+
 
 `;
 
-//${props => (props.open === true ? `background: #2196f3;` : null)}
+//${props => (props.openStatus ? `background: #2196f3;` : null)}
 
 const InfoP = styled.p` 
 
@@ -43,11 +44,12 @@ const Character = props => {
    
     return (
        
-       //<FancyP onClick={props.setOpen}>{props.charData.name}</FancyP>
+       
         //<FancyP onClick={(event) => console.log("click")}>{props.charData.name}</FancyP>
-        
+        //<FancyP>{props.charData.name}</FancyP>
        <CharBox>
-            <FancyP>{props.charData.name}</FancyP>
+            <FancyP onClick={props.toggleOpen}>{props.charData.name}</FancyP>
+            
             <InfoP>Height: {props.charData.height} </InfoP>
             <InfoP>Mass: {props.charData.mass}</InfoP>
             <InfoP>Birth Year: {props.charData.birth_year}</InfoP>

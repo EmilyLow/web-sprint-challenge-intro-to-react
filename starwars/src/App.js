@@ -29,6 +29,7 @@ const BackgroundDiv = styled.div`
   const [characterData, setCharacterData] = useState([]);
   const [open, setOpen] = useState(false);
  
+  
   useEffect( () => {
 
     axios
@@ -47,6 +48,7 @@ const BackgroundDiv = styled.div`
   }, []);
 
   const toggleOpen = () => {
+    console.log("Toggle");
     setOpen(!open);
   };
 
@@ -56,7 +58,7 @@ const BackgroundDiv = styled.div`
       <LargeHeader className="Header">Star Wars</LargeHeader>
       {characterData.map(thisChar => (
           //console.log("mapData", thisChar),
-           <Character charData = {thisChar} open = {open} setOpen = {setOpen}/> 
+           <Character charData = {thisChar} openStatus = {open} toggleOpen = {toggleOpen}/> 
 
         ))}
     </div>
