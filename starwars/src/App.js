@@ -27,14 +27,15 @@ const BackgroundDiv = styled.div`
   `;
 
   const [characterData, setCharacterData] = useState([]);
-
+  const [open, setOpen] = useState(false);
+ 
   useEffect( () => {
 
     axios
     .get("https://swapi.dev/api/people/")
     .then(res => {
 
-      console.log(res.data.results);
+      //console.log(res.data.results);
       setCharacterData(res.data.results);
     })
     .catch(err => {
@@ -45,15 +46,17 @@ const BackgroundDiv = styled.div`
 
   }, []);
 
-
+  const toggleOpen = () => {
+    setOpen(!open);
+  };
 
   return (
     <BackgroundDiv>
     <div className="App">
       <LargeHeader className="Header">Star Wars</LargeHeader>
       {characterData.map(thisChar => (
-          console.log("mapData", thisChar),
-           <Character charData = {thisChar} /> 
+          //console.log("mapData", thisChar),
+           <Character charData = {thisChar} open = {open} setOpen = {setOpen}/> 
 
         ))}
     </div>
